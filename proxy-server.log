@@ -1,0 +1,6 @@
+Listening at http://127.0.0.1:8000
+Proxy request: 
+{"user-agent":"curl/7.30.0","host":"127.0.0.1:8001","accept":"*/*","x-asdf":"foo"}
+
+Echo request: 
+{"user-agent":"curl/7.30.0","host":"127.0.0.1:8001","accept":"*/*","x-asdf":"foo","connection":"keep-alive"}
