@@ -10,7 +10,7 @@ let scheme = 'http://'
 let port = argv.port || argv.host === '127.0.0.1'  ?  8000 : 80
 let destinationUrl = argv.url || scheme + argv.host + ':' + port
 
-let logStream = argv.logfile ? fs.createWriteStream(argv.logfile) : process.stdout
+let logStream = argv.logfile1 ? fs.createWriteStream(argv.logfile1) : process.stdout
 
 http.createServer((req, res) => {
 	logStream.write('\n\nEcho request: \n' + JSON.stringify(req.headers))
@@ -34,8 +34,6 @@ http.createServer((req, res) => {
         headers: req.headers,
         url: url + req.url
     }
-
-    console.log('\n\n Destination url: ' + url)
 
     logStream.write('\nProxy request: \n' + JSON.stringify(req.headers))
 
